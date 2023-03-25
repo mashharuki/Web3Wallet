@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-25T13:13:06.051Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="szRh5N2vSyKAzZ0Pu7bP" version="21.0.7" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2023-03-25T13:17:58.212Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="5oO7AWcUbiLLfui0oX3U" version="21.0.7" type="github" pages="7">
   <diagram id="AgBQlWnoEHxcCPggjtpq" name="system image">
     <mxGraphModel dx="2466" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -847,7 +847,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="vC9tz_QPWP7_JmhkinQU" name="概念図(改良版)">
-    <mxGraphModel dx="862" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1192" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -893,11 +893,11 @@
         <mxCell id="cdYcmDh25FTNRktMhCsV-4" value="Token" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="300" y="490" width="70" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="cdYcmDh25FTNRktMhCsV-6" value="Portflio" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=15;" vertex="1" parent="1">
-          <mxGeometry x="370" y="570" width="60" height="30" as="geometry" />
+        <mxCell id="cdYcmDh25FTNRktMhCsV-6" value="やり取りによって自動でPortflioを&lt;br&gt;構築していくことができる。" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="189.38" y="600" width="258.75" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="cdYcmDh25FTNRktMhCsV-7" value="自分のアドレスや&lt;br&gt;DID&lt;br&gt;Name、&lt;br&gt;VCを&lt;br&gt;&lt;br&gt;一覧で表示する機能をつける。&lt;br&gt;&lt;br&gt;↓ このアドレスを使って何かをした時、ポジティブな結果が生まれたらトークンを付与&lt;br&gt;そのトークンの量及び使用量をポジティブポイントとして換算していく。&lt;br&gt;&lt;br&gt;何か違法なやり取りなどに自ら関与したりした場合にはそれを検知してポジティブポイントをマイナスする。&lt;br&gt;&lt;br&gt;→ 全てスマートコントラクトによる自動の仕組み&lt;br&gt;→ 信用スコア算出のアルゴリズムは、スマコン上&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=15;" vertex="1" parent="1">
-          <mxGeometry x="490" y="620" width="680" height="150" as="geometry" />
+        <mxCell id="cdYcmDh25FTNRktMhCsV-7" value="自分のアドレスや&lt;br&gt;DID&lt;br&gt;Name、&lt;br&gt;VCを&lt;br&gt;&lt;br&gt;一覧で表示する機能をつける。&lt;br&gt;&lt;br&gt;↓ このアドレスを使って何かをした時、ポジティブな結果が生まれたらトークンを付与&lt;br&gt;そのトークンの量及び使用量をポジティブポイントとして換算していく。&lt;br&gt;&lt;br&gt;何か違法なやり取りなどに自ら関与したりした場合にはそれを検知して&lt;br&gt;ポジティブポイントをマイナスする。&lt;br&gt;&lt;br&gt;→ 全てスマートコントラクトによる自動の仕組み&lt;br&gt;→ 信用スコア算出のアルゴリズムは、スマコン上" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="110" width="680" height="150" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
