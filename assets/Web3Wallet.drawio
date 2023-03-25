@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-25T12:35:27.320Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="ajFd-28TtjH68qi9q7TC" version="21.0.7" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2023-03-25T13:13:06.051Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="szRh5N2vSyKAzZ0Pu7bP" version="21.0.7" type="github" pages="7">
   <diagram id="AgBQlWnoEHxcCPggjtpq" name="system image">
     <mxGraphModel dx="2466" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -638,7 +638,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Ts_o70Z9hDjAMIhU7eT9-1" value="データの持ち方 (ETH Tokyo)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="20" y="30" width="270" height="60" as="geometry" />
+          <mxGeometry x="20" y="10" width="270" height="60" as="geometry" />
         </mxCell>
         <mxCell id="VWMskkeWK5A0f91AC7j8-2" value="ユーザー" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="100" y="270" width="30" height="60" as="geometry" />
@@ -668,7 +668,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="VWMskkeWK5A0f91AC7j8-8" value="・DIDの大元は、ION上&lt;br style=&quot;font-size: 14px;&quot;&gt;・ウォレットアドレスの大元は、ブロックチェーン情報&lt;br style=&quot;font-size: 14px;&quot;&gt;・VCの大元は、任意のストレージ上&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;br style=&quot;font-size: 14px;&quot;&gt;にそれぞれ存在する。&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;br style=&quot;font-size: 14px;&quot;&gt;ユーザーを煩雑な秘密鍵の管理から解放し&lt;br style=&quot;font-size: 14px;&quot;&gt;分かりやすいUIにしているのが今のアプリ" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
-          <mxGeometry x="300" y="110" width="400" height="30" as="geometry" />
+          <mxGeometry x="330" y="100" width="400" height="30" as="geometry" />
         </mxCell>
         <mxCell id="VWMskkeWK5A0f91AC7j8-9" value="ION" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="580" y="210" width="70" height="60" as="geometry" />
@@ -742,9 +742,6 @@
             <mxPoint x="310" y="610" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="oUUKvEPoo2IMEg3V2a06-1" value="VCが増えるほど&lt;br&gt;トークンが貯まる。" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=1;base=30;align=left;size=33;position=0.15;" vertex="1" parent="1">
-          <mxGeometry x="280" y="610" width="130" height="101.5" as="geometry" />
-        </mxCell>
         <mxCell id="oUUKvEPoo2IMEg3V2a06-2" value="Token" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="570" y="550" width="70" height="35" as="geometry" />
         </mxCell>
@@ -757,11 +754,14 @@
         <mxCell id="oUUKvEPoo2IMEg3V2a06-4" value="このトークンを&lt;br&gt;使いたいと思える&lt;br&gt;ユースケースが必要。" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;position2=0;base=30;align=left;size=33;position=0.15;" vertex="1" parent="1">
           <mxGeometry x="630" y="470" width="180" height="90" as="geometry" />
         </mxCell>
+        <mxCell id="47o4ls_BT2fAxc8jBTKW-1" value="" style="triangle;whiteSpace=wrap;html=1;direction=south;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="374" y="730" width="80" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="TSU2b1SK_DvUa6gOBwrS" name="画面遷移図(改良アイディア)">
-    <mxGraphModel dx="862" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1192" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -771,7 +771,7 @@
         <mxCell id="41QFbdEamlsRjSm61O68-2" value="ログイン&lt;br&gt;画面" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="190" y="345" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="41QFbdEamlsRjSm61O68-3" value="Home&lt;br&gt;画面" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+        <mxCell id="41QFbdEamlsRjSm61O68-3" value="Home&lt;br&gt;画面&lt;br&gt;or&amp;nbsp;&lt;br&gt;初期登録画面" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="350" y="345" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="41QFbdEamlsRjSm61O68-4" value="Send画面" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
@@ -825,10 +825,10 @@
             <mxPoint x="530" y="301" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="41QFbdEamlsRjSm61O68-23" value="ゲーム用&lt;br&gt;NFT購入&lt;br&gt;画面" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+        <mxCell id="41QFbdEamlsRjSm61O68-23" value="VCアップ&lt;br&gt;ロード画面" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="520" y="540" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="41QFbdEamlsRjSm61O68-24" value="ゲーム&lt;br&gt;プレイ&lt;br&gt;画面" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+        <mxCell id="41QFbdEamlsRjSm61O68-24" value="Identity&lt;br&gt;情報一覧&lt;br&gt;確認画面" style="whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="520" y="650" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="41QFbdEamlsRjSm61O68-25" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="41QFbdEamlsRjSm61O68-3" target="41QFbdEamlsRjSm61O68-23" edge="1">
