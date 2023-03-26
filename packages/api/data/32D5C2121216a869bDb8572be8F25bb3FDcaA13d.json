@@ -1,30 +1,30 @@
 {
   "@context": "https://w3id.org/did-resolution/v1",
   "didDocument": {
-    "id": "did:ion:EiAhOtns7CytGudHJsyZ6WqTaCqmLRXsk8mW26ZOaEF7AA",
+    "id": "did:ion:EiD8v1IPuZl8SKxgWyvYg1Q0l6ElzUamEVImNkXzJUgDEA",
     "@context": [
       "https://www.w3.org/ns/did/v1",
       {
-        "@base": "did:ion:EiAhOtns7CytGudHJsyZ6WqTaCqmLRXsk8mW26ZOaEF7AA"
+        "@base": "did:ion:EiD8v1IPuZl8SKxgWyvYg1Q0l6ElzUamEVImNkXzJUgDEA"
       }
     ],
     "service": [
       {
         "id": "#idq",
         "type": "LinkedDomains",
-        "serviceEndpoint": "http://idq.vercel.app/"
+        "serviceEndpoint": "http://example/"
       }
     ],
     "verificationMethod": [
       {
         "id": "#key-1",
-        "controller": "did:ion:EiAhOtns7CytGudHJsyZ6WqTaCqmLRXsk8mW26ZOaEF7AA",
+        "controller": "did:ion:EiD8v1IPuZl8SKxgWyvYg1Q0l6ElzUamEVImNkXzJUgDEA",
         "type": "EcdsaSecp256k1VerificationKey2019",
         "publicKeyJwk": {
           "kty": "EC",
           "crv": "secp256k1",
-          "x": "Xn7m1mU3NlWKt-L2oehubCJODRlc8Ur0yEPybLThsmU",
-          "y": "fiDXs9cmMPm4l8UZKQlncDGwabo3JzAueFRBtIXWa7Y"
+          "x": "HU1IeYkyDnabQH3yZIMkkY7e031bYml7v6pm-56LubA",
+          "y": "hrGw-CHrIScmnfzztoCYgrldKe_KhYngo45Q6I_vIOM"
         }
       }
     ],
@@ -35,9 +35,9 @@
   "didDocumentMetadata": {
     "method": {
       "published": false,
-      "recoveryCommitment": "EiAreDzm42JYXS-GCaU6_yqmJ_YNfG2Jp1JbaDscBD4sxw",
-      "updateCommitment": "EiDi2YlaZJmj5iLkgB8u63NnihDlHsusqkst-_o1vZ_YWw"
+      "recoveryCommitment": "EiA83Np2hvh3ani7Ank88K2Bk1qCzyjXvLciDFGktO0J-g",
+      "updateCommitment": "EiB8bt1_jmSYg5gjR1yssKbXlaREm5CkTo3IeeGjPCYtNQ"
     },
-    "canonicalId": "did:ion:EiAhOtns7CytGudHJsyZ6WqTaCqmLRXsk8mW26ZOaEF7AA"
+    "canonicalId": "did:ion:EiD8v1IPuZl8SKxgWyvYg1Q0l6ElzUamEVImNkXzJUgDEA"
   }
 }

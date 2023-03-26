@@ -3,39 +3,50 @@
  */
 
 // did用のモジュールを読み込む
-const ION = require('@decentralized-identity/ion-tools');
+const { anchor, DID, generateKeyPair } = require('@decentralized-identity/ion-tools');
+const log4js = require('log4js');
+// log4jsの設定
+log4js.configure('./log/log4js_setting.json');
+const logger = log4js.getLogger("server");
 
 /**
  * generateDID function
  */
 const generateDID = async() => {
-      // create key pair
-      let authnKeys = await ION.generateKeyPair();
-      // new DID
-      let did = new ION.DID({
-            content: {
-                  publicKeys: [
-                        {
-                              id: 'key-1',
-                              type: 'EcdsaSecp256k1VerificationKey2019',
-                              publicKeyJwk: authnKeys.publicJwk,
-                              purposes: [ 'authentication' ]
-                        }
-                  ],
-                  services: [
-                        {
-                              id: 'idq',
-                              type: 'LinkedDomains',
-                              serviceEndpoint: 'http://example/'
-                        }
-                  ]
-            }
-      });
+      
+      let did;
+      let response;
 
-      // anchor DID
-      const requestBody = await did.generateRequest();
-      const request = new ION.AnchorRequest(requestBody);
-      let response = await request.submit();
+      try {
+            // create key pair
+            let authnKeys = await generateKeyPair();
+            // new DID
+            did = new DID({
+                  content: {
+                        publicKeys: [
+                              {
+                                    id: 'key-1',
+                                    type: 'EcdsaSecp256k1VerificationKey2019',
+                                    publicKeyJwk: authnKeys.publicJwk,
+                                    purposes: [ 'authentication' ]
+                              }
+                        ],
+                        services: [
+                              {
+                                    id: 'idq',
+                                    type: 'LinkedDomains',
+                                    serviceEndpoint: 'http://example/'
+                              }
+                        ]
+                  }
+            });
+
+            // anchor DID
+            const requestBody = await did.generateRequest();
+            response = await anchor(requestBody);
+      } catch (err) {
+            logger.error("generate DID erro:", err);
+      }
 
       return {
             response,

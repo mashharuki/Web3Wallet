@@ -46,7 +46,7 @@ const Buy = (props) => {
 
             // IDQToken発行APIを呼び出す
             superAgent
-                  .post(baseURL + '/api/mintIDQ')
+                  .post(baseURL + '/api/mintToken')
                   .query({
                         to: currentAccount,
                         amount: amount

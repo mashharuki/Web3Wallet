@@ -9,6 +9,7 @@ const logger = log4js.getLogger("server");
 
 // get Mnemonic code
 const {
+    MNEMONIC,
     AWS_ACCESS_KEY_ID,
     AWS_SECRET_ACCESS_KEY,
 } = process.env

@@ -98,10 +98,10 @@ Avalanche Fuji Chain(Testnet)
 
 ## deploy した Contract の情報
 
-| No. | コントラクト名  | Explorer の URL                                                                                                                    |
-| --- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | MyToken         | [0x45f73bdac06c8ba7c41e47ed7eefe85ef74bae07](https://testnet.snowtrace.io/address/0x45f73bdac06c8ba7c41e47ed7eefe85ef74bae07#code) |
-| 2   | WalletFactoryV4 | [0xf9d1A62058c6eE047a5f0FfC1797A19FEffe44b9](https://testnet.snowtrace.io/address/0xf9d1A62058c6eE047a5f0FfC1797A19FEffe44b9#code) |
+| No. | コントラクト名  | Explorer の URL                                                                                                               |
+| --- | --------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 1   | MyToken         | [0x0a730733Ee85466278Cd31F452165A30971Ecdbd](https://testnet.snowtrace.io/address/0x0a730733Ee85466278Cd31F452165A30971Ecdbd) |
+| 2   | WalletFactoryV4 | [0x72de517b21725DeA9aE8b0C7911eF3c71578b29D](https://testnet.snowtrace.io/address/0x72de517b21725DeA9aE8b0C7911eF3c71578b29D) |
 
 ## AWS KMS 上の鍵で生成したウォレットアドレス
 
