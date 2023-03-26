@@ -33,15 +33,6 @@ const createKmsSigner = () => {
 }
 
 /**
- * ローカルの秘密鍵を使ってイーサリアムクライアントを生成するメソッド
- */
-const createLocalSigner = () => {
-    const signer = new ethers.Wallet.fromMnemonic(MNEMONIC);
-
-    return signer;
-}
-
-/**
  * トランザクションを送信するメソッド
  * @param abi コントラクトのABI
  * @param address コントラクトのアドレス
@@ -57,13 +48,13 @@ const sendTx = async(abi, address, functionName, args, rpc_url, chainId) => {
     // crate contract function data
     var func = contract.encodeFunctionData(functionName, args);
     // create wallet object
-    var wallet = createLocalSigner();
+    var wallet = createKmsSigner();
     // create provider
     var provider = new ethers.providers.JsonRpcProvider(rpc_url);
     // conncet provider
     wallet.connect(provider);
     // get nonce
-    var nonce = await provider.getTransactionCount(wallet.address);
+    var nonce = await provider.getTransactionCount(await wallet.getAddress());
 
     // create tx data
     var tx = {
@@ -107,13 +98,13 @@ const sendBatchTx = async(txs) => {
         // crate contract function data
         var func = contract.encodeFunctionData(txs[i][2], txs[i][3]);
         // create wallet object
-        var wallet = createLocalSigner();
+        var wallet = createKmsSigner();
         // create provider
         var provider = new ethers.providers.JsonRpcProvider(txs[i][4]);
         // conncet provider
         wallet.connect(provider);
         // get nonce
-        var nonce = await provider.getTransactionCount(wallet.address) + i;
+        var nonce = await provider.getTransactionCount(await wallet.getAddress()) + i;
         // create tx data
         var tx = {
             gasPrice: 30000000000,
@@ -157,13 +148,13 @@ const sendBatchTx = async(txs) => {
  */
 const sendEth = async(to, value, rpc_url, chainId) => {
     // create wallet object
-    var wallet = createLocalSigner();
+    var wallet = createKmsSigner();
     // create provider
     var provider = new ethers.providers.JsonRpcProvider(rpc_url);
     // conncet provider
     wallet.connect(provider);
     // get nonce
-    var nonce = await provider.getTransactionCount(wallet.address);
+    var nonce = await provider.getTransactionCount(await wallet.getAddress());
 
     logger.log("send ETH amount:", ethers.utils.parseEther(value.toString())._hex);
    
@@ -194,7 +185,6 @@ const sendEth = async(to, value, rpc_url, chainId) => {
 
 module.exports = { 
     createKmsSigner,
-    createLocalSigner,
     sendTx,
     sendBatchTx, 
     sendEth 

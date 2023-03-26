@@ -7,7 +7,7 @@ const { ethers } = require('ethers');
 const ION = require('@decentralized-identity/ion-tools')
 // ブロックチェーン機能のモジュールを読み込む
 const {
-  createLocalSigner,
+  createKmsSigner,
   sendTx,
   sendBatchTx,
   sendEth
@@ -132,11 +132,11 @@ app.get('/api/balance/token', async(req, res) => {
   var addr = req.query.addr;
 
   // create wallet 
-  const wallet = createLocalSigner();
+  const wallet = createKmsSigner();
   // create provider
   const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
   // create contract 
-  var contract = new ethers.Contract(contractAddr.MYTOKEN_ADDRESS, MyTokenABI, await provider.getSigner(wallet.address));
+  var contract = new ethers.Contract(contractAddr.MYTOKEN_ADDRESS, MyTokenABI, await provider.getSigner(await wallet.getAddress()));
 
   const balance = await contract.callStatic.balanceOf(addr);
 
@@ -182,11 +182,11 @@ app.post('/api/send', async(req, res) => {
       
   try {
     // create wallet 
-    const wallet = createLocalSigner();
+    const wallet = createKmsSigner();
     // create provider
     const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
     // get signer 
-    const signer = await provider.getSigner(wallet.address)
+    const signer = await provider.getSigner(await wallet.getAddress())
     // create mytoken contract 
     var myTokenContract = new ethers.Contract(contractAddr.MYTOKEN_ADDRESS, MyTokenABI, signer);
     // create factory contract
