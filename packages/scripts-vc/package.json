@@ -1,9 +1,8 @@
 {
-  "name": "vc",
+  "name": "scripts-vc",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
-  "private": true,
   "scripts": {
     "convert": "yarn node --loader ts-node/esm ./scripts/convert.ts ./keys/key_file.txt > ./hosting/jwk.json",
     "create:bucket": "cd hosting && terraform init && terraform apply",

@@ -3,8 +3,6 @@ const express = require('express');
 const app = express();
 const log4js = require('log4js');
 const { ethers } = require('ethers');
-// 暗号化用のモジュールを読み込む
-const crypto = require('crypto');
 // did用のモジュールを読み込む
 const ION = require('@decentralized-identity/ion-tools')
 // ブロックチェーン機能のモジュールを読み込む

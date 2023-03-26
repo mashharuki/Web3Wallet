@@ -1,0 +1,25 @@
+{
+  "name": "Web3Wallet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mashharuki/Web3Wallet.git",
+  "author": "mashharuki",
+  "license": "MIT",
+  "description": "Web3Wallet",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "compile:contract": "yarn workspace backend compile",
+    "test:contract": "yarn workspace backend test",
+    "start:frontend": "yarn workspace frontend start",
+    "start:intro-app": "yarn workspace intro-app start",
+    "start:api": "yarn workspace api start",
+    "calculate-cid": "yarn workspace scripts calculate-cid",
+    "calculate-hashe": "yarn workspace scripts calculate-hashe",
+    "download-cid": "yarn workspace scripts download-cid",
+    "upload": "yarn workspace scripts upload",
+    "convert": "yarn workspace scripts-vc convert"
+  }
+}
