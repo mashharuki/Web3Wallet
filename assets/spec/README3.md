@@ -8,14 +8,7 @@
 
 ## API サーバーの設定と起動
 
-1. `api`ディレクトリに移動する。
-2. モジュールのインストールのため下記コマンドを実行
-
-```zsh
-npm i
-```
-
-3. `.env`ファイルを作成し、MetaMask のニーモニックコードを貼り付ける。
+1. `.env`ファイルを作成し、MetaMask のニーモニックコードを貼り付ける。
 
 ```txt
 MNEMONIC=YOUR_DATA
@@ -23,6 +16,8 @@ STRIPE_API_KEY=YOUR_DATA
 PINATA_API_KEY=YOUR_DATA
 PINATA_API_SECRET=YOUR_DATA
 PINATA_API_JWT=YOUR_DATA
+AWS_ACCESS_KEY_ID=YOUR_DATA
+AWS_SECRET_ACCESS_KEY=YOUR_DATA
 ```
 
 4. `ABI.js`にコンパイルしたコントラクトの ABI 情報を貼り付ける。
@@ -38,7 +33,7 @@ const WalletABI = `ここにABIを貼り付ける`;
 5. 起動コマンドを入力する。
 
 ```zsh
-npm run start
+yarn start:api
 ```
 
 下記のように出力されれば、API サーバーの起動は完了
@@ -52,14 +47,7 @@ npm run start
 
 ## intro-app の起動
 
-1. `intro-app`ディレクトリに移動する。
-2. モジュールのインストールのため下記コマンドを実行
-
-```zsh
-npm i
-```
-
-3. `App.js`6 行目の変数`URL`に API サーバー起動時に出力されたエンドポイントの情報を入力する。
+1. `App.js`6 行目の変数`URL`に API サーバー起動時に出力されたエンドポイントの情報を入力する。
 
 ```diff
       import QRCode from "qrcode.react";
@@ -95,16 +83,9 @@ npm run start
 
 ## Soul Wallet の起動
 
-1. `frontend`ディレクトリに移動する。
-2. モジュールのインストールのため下記コマンドを実行
+1. `Constants.js`の 29 行目のの変数`baseURL`に API サーバー起動時に出力されたエンドポイントの情報を入力する。
 
-```zsh
-npm i
-```
-
-3. `Constants.js`の 29 行目のの変数`baseURL`に API サーバー起動時に出力されたエンドポイントの情報を入力する。
-
-4. `Constants.js`の `CONTRACT_ADDRESS`と`MYTOKEN_ADDRESS`にデプロイしたアドレス情報を入力する。
+2. `Constants.js`の `CONTRACT_ADDRESS`と`MYTOKEN_ADDRESS`にデプロイしたアドレス情報を入力する。
 
 ```diff
 /**
@@ -123,7 +104,7 @@ export const RPC_URL = `https://ava-testnet.public.blastapi.io/ext/bc/C/rpc`;
 + export const baseURL = 'http://192.168.0.16:3001'; // please change
 ```
 
-4. `.env`ファイルにストライプと pinata の API の環境変数を記載する。
+3. `.env`ファイルにストライプと pinata の API の環境変数を記載する。
 
 ```txt
 REACT_APP_STRIPE_API_KEY=<YOUR_DATA>
@@ -132,8 +113,8 @@ REACT_APP_PINATA_API_SECRET=<YOUR_DATA>
 REACT_APP_PINATA_API_JWT=<YOUR_DATA>
 ```
 
-5. 起動コマンドを実行する。
+4. 起動コマンドを実行する。
 
 ```zsh
-npm run start
+yarn start:frontend
 ```
