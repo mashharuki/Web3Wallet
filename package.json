@@ -13,7 +13,8 @@
   "scripts": {
     "compile:contract": "yarn workspace backend compile",
     "test:contract": "yarn workspace backend test",
-    "depoly:fuji": "yarn workspace backend deploy:fuji",
+    "deploy:fuji": "yarn workspace backend deploy:fuji",
+    "deploy:sepolia": "yarn workspace backend deploy:sepolia",
     "start:frontend": "yarn workspace frontend start",
     "start:intro-app": "yarn workspace intro-app start",
     "start:api": "yarn workspace api start",

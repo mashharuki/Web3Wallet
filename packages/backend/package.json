@@ -11,6 +11,7 @@
     "compile": "npx truffle compile",
     "build": "npx truffle build",
     "deploy:goreli": "npx truffle migrate --network goreli",
+    "deploy:sepolia": "npx truffle migrate --network sepolia",
     "deploy:mumbai": "npx truffle migrate --network mumbai",
     "deploy:bsctest": "npx truffle migrate --network bsctest",
     "deploy:harmony": "npx truffle migrate --network harmony",

@@ -7,6 +7,7 @@ const {
   HD_MNEMONIC,
   ALCHEMY_GOERLI_API_KEY,
   ALCHEMY_MUNBAI_APIKEY,
+  ALCHEMY_SEPOLIA_API_KEY,
   ETHERSCAN_API_KEY,
   POLYGONSCAN_API_KEY,
   BSCSCAN_API_KEY,
@@ -36,6 +37,14 @@ module.exports = {
     goreli: {
       provider: () => new HDWalletProvider(HD_MNEMONIC, `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_GOERLI_API_KEY}`),
       network_id: 5,
+      gas: 5500000,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    },
+    sepolia: {
+      provider: () => new HDWalletProvider(HD_MNEMONIC, `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_SEPOLIA_API_KEY}`),
+      network_id: 11155111,
       gas: 5500000,
       confirmations: 2,
       timeoutBlocks: 200,
