@@ -12,7 +12,7 @@ Web3 Wallet
 
 ## ピッチ資料
 
-[ピッチ資料](https://github.com/mashharuki/IDQ/blob/main/assets/pitch/pitch.md)
+[ピッチ資料](https://github.com/mashharuki/Web3Wallet/blob/main/assets/pitch/pitch.md)
 
 ## キャッチフレーズ
 
@@ -121,29 +121,31 @@ Avalanche Fuji Chain(Testnet)
 
 ```bash
 .
-├── README.md     本ドキュメント
-├── api           APIサーバー用ディレクトリ
-├── assets        画像などの資材用ディレクトリ
-├── backend       スマートコントラクト用ディレクトリ
-├── book          honkit用のディレクトリ
-├── docs          ビルドした成果物用ディレクトリ
-├── frontend      フロントエンド用ディレクトリ
-├── script        Ipfsへファイルをアップロードするためのスクリプトを格納したディレクトリ
-└── intro-app     QRコード表示簡易アプリ用ディレクトリ
+├── README.md           本ドキュメント
+├── README_en.md        英語版
+├── LICENSE             ライセンス
+├── assets              画像などの資材用ディレクトリ
+├── packages
+│   ├── api             APIサーバー用のディレクトリ
+│   ├── backend         スマートコントラクト用のディレクトリ
+│   ├── frontend        フロントエンド用のディレクトリ
+│   ├── intro-app       QRコード表示用アプリのディレクトリ
+│   ├── scripts         pinata関連のスクリプト用のディレクトリ
+│   └── scripts-vc      Verifiable Credentials用のディレクトリ
 ```
 
 ## テスト手順
 
-[テスト手順書](https://github.com/mashharuki//blob/main/assets/spec/README2.md)
+[テスト手順書](https://github.com/mashharuki/Web3Wallet/blob/main/assets/spec/README2.md)
 
 ## 審査やテストのためにプロジェクトにアクセスする方法など
 
-[プロジェクト起動手順書(ローカル環境)](https://github.com/mashharuki//blob/main/assets/spec/README3.md)
+[プロジェクト起動手順書(ローカル環境)](https://github.com/mashharuki/Web3Wallet/blob/main/assets/spec/README3.md)
 
 ## その他ドキュメント
 
-- [概要設計書](https://github.com/mashharuki//blob/main/assets/spec/design.md)
-- [機能設計書](https://github.com/mashharuki//blob/main/assets/spec/functions.md)
+- [概要設計書](https://github.com/mashharuki/Web3Wallet/blob/main/assets/spec/design.md)
+- [機能設計書](https://github.com/mashharuki/Web3Wallet/blob/main/assets/spec/functions.md)
 
 #### その他本プロダクトを開発するにあたり参考にした文献
 

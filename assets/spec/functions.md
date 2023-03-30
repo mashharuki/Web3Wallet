@@ -54,10 +54,10 @@
 | WalletFactoryV4 | wallets      | [MultiSigWallet]                             | MultiSigWallet 型の配列を保持する変数                                                                             |
 | WalletFactoryV4 | maxLimit     | uint256                                      | 関数から返すことのできる最大値                                                                                    |
 | WalletFactoryV4 | owner        | address                                      | WalletFactoryV4 コントラクトの owner アドレス                                                                     |
-| WalletFactoryV4 | isRegistered | mapping(address => bool)                     | コントラクトウォレットアドレスに紐づく DID が生成されているチェックするための map                                 |
-| WalletFactoryV4 | dids         | mapping(address => string)                   | DID とコントラクトウォレットのアドレスを格納する Map (アドレスから DID を求めるための map)                        |
-| WalletFactoryV4 | addrs        | mapping(string => address)                   | DID とコントラクトウォレットのアドレスを格納する Map (DID からコントラクトウォレットのアドレスを求めるための map) |
-| WalletFactoryV4 | vcs          | mapping(string => [VcInfo])                  | コントラクトウォレットと VC までの CID 情報 を格納する Map                                                        |
+| ✨DNS           | isRegistered | mapping(address => bool)                     | コントラクトウォレットアドレスに紐づく DID が生成されているチェックするための map                                 |
+| ✨DNS           | dids         | mapping(address => string)                   | DID とコントラクトウォレットのアドレスを格納する Map (アドレスから DID を求めるための map)                        |
+| ✨DNS           | addrs        | mapping(string => address)                   | DID とコントラクトウォレットのアドレスを格納する Map (DID からコントラクトウォレットのアドレスを求めるための map) |
+| ✨DNS           | vcs          | mapping(string => [VcInfo])                  | コントラクトウォレットと VC までの CID 情報 を格納する Map                                                        |
 | MultiSigWallet  | Transaction  | struct                                       | トランザクションデータ用の構造体                                                                                  |
 | MultiSigWallet  | walletName   | string                                       | マルチシグウォレットの名前                                                                                        |
 | MultiSigWallet  | owners       | [address]                                    | Owner のアドレスを格納する配列                                                                                    |
@@ -82,9 +82,9 @@
 | WalletFactoryV4 | walletsCount          | MultiSigWallet のインスタンス数を取得する関数                  |
 | WalletFactoryV4 | createWallet          | MultiSigWallet のインスタンス生成関数                          |
 | WalletFactoryV4 | getWallets            | 作成済みウォレットの情報を取得するメソッド                     |
-| WalletFactoryV4 | register              | DID とコントラクトウォレットのアドレスを紐づけるためのメソッド |
-| WalletFactoryV4 | getVcs                | DID に紐づく VC 情報一覧を取得するためのメソッド               |
-| WalletFactoryV4 | updateVc              | DID に紐づく VC 情報を新たに登録するためのメソッド             |
+| ✨DNS           | register              | DID とコントラクトウォレットのアドレスを紐づけるためのメソッド |
+| ✨DNS           | getVcs                | DID に紐づく VC 情報一覧を取得するためのメソッド               |
+| ✨DNS           | updateVc              | DID に紐づく VC 情報を新たに登録するためのメソッド             |
 | MultiSigWallet  | receive()             | 入金用のメソッド                                               |
 | MultiSigWallet  | submit                | トランザクションデータを作成するメソッド                       |
 | MultiSigWallet  | approve               | 指定した ID のトランザクションを承認するメソッド               |

@@ -3,12 +3,21 @@
 ローカルで動かす手順は下記の通りです。
 
 1. API サーバーの設定と起動
-2. intro-app の起動
-3. Soul Wallet の起動
+2. Web3 Wallet の起動
 
 ## API サーバーの設定と起動
 
-1. `.env`ファイルを作成し、MetaMask のニーモニックコードを貼り付ける。
+1. `/packages/api/.env`ファイルを作成し、以下の環境変数を設定する。
+
+- ニーモニックコード
+- Stripe API を使用するための API KEY
+- Pinata API を利用するための API KEY
+- AWS API KEY と Secret Accress Key(今は、空でも動く)
+
+Stipe と Pinata の API Key の取得についてはそれぞれ以下サイトにアクセスしてユーザー登録を実施したのち、APIKEY を生成すること
+
+https://stripe.com/jp  
+https://www.pinata.cloud/
 
 ```txt
 MNEMONIC=YOUR_DATA
@@ -20,13 +29,17 @@ AWS_ACCESS_KEY_ID=YOUR_DATA
 AWS_SECRET_ACCESS_KEY=YOUR_DATA
 ```
 
-4. `ABI.js`にコンパイルしたコントラクトの ABI 情報を貼り付ける。
+4. `packages/api/ABI`配下のそれぞれの JavaScript ファイルにコンパイルしたコントラクトの ABI 情報を貼り付ける。(すでに貼り付けてあるのでスマートコントラクトのソースコードを更新していなければ不要)
 
 ```js
 const MyTokenABI = `ここにABIを貼り付ける`;
+```
 
+```js
 const FactoryABI = `ここにABIを貼り付ける`;
+```
 
+```js
 const WalletABI = `ここにABIを貼り付ける`;
 ```
 
@@ -45,7 +58,7 @@ yarn start:api
 起動しました https://192.168.0.3:3001
 ```
 
-## intro-app の起動
+## intro-app の起動 (現在は不要)
 
 1. `App.js`6 行目の変数`URL`に API サーバー起動時に出力されたエンドポイントの情報を入力する。
 
@@ -81,11 +94,11 @@ npm run start
 
 <img src="./assets/img/qrcode_local.png">
 
-## Soul Wallet の起動
+## Web3 Wallet の起動
 
-1. `Constants.js`の 29 行目のの変数`baseURL`に API サーバー起動時に出力されたエンドポイントの情報を入力する。
+1. `packages/frontend/src/components/Constants.js`の 変数`baseURL`に API サーバー起動時に出力されたエンドポイントの情報を入力する。
 
-2. `Constants.js`の `CONTRACT_ADDRESS`と`MYTOKEN_ADDRESS`にデプロイしたアドレス情報を入力する。
+2. `packages/frontend/src/components/Constants.js`の `CONTRACT_ADDRESS`と`MYTOKEN_ADDRESS`にデプロイしたアドレス情報を入力する。
 
 ```diff
 /**
@@ -105,6 +118,8 @@ export const RPC_URL = `https://ava-testnet.public.blastapi.io/ext/bc/C/rpc`;
 ```
 
 3. `.env`ファイルにストライプと pinata の API の環境変数を記載する。
+
+貼り付ける API Key は、API サーバーの起動の設定の際に取得してきたものと同じ値で良い。
 
 ```txt
 REACT_APP_STRIPE_API_KEY=<YOUR_DATA>
