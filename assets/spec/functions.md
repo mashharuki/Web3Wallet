@@ -49,15 +49,21 @@
 
 | コントラクト名  | 変数名       | 型                                           | 内容                                                                                                              |
 | --------------- | ------------ | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| MyToken         | tokenName    | string                                       | トークンの名前                                                                                                    |
-| MyToken         | tokenSymbol  | string                                       | トークンのシンル                                                                                                  |
+| MyToken         | tokenName    | string                                       | トークンの名前                                           |
+| MyToken         | tokenSymbol  | string                                       | トークンのシンボル       |
+| MyToken         | scores  | mapping(address => uint)  | アドレスに紐づくスコアを保持するためのMap |
 | WalletFactoryV4 | wallets      | [MultiSigWallet]                             | MultiSigWallet 型の配列を保持する変数                                                                             |
 | WalletFactoryV4 | maxLimit     | uint256                                      | 関数から返すことのできる最大値                                                                                    |
 | WalletFactoryV4 | owner        | address                                      | WalletFactoryV4 コントラクトの owner アドレス                                                                     |
 | ✨DNS           | isRegistered | mapping(address => bool)                     | コントラクトウォレットアドレスに紐づく DID が生成されているチェックするための map                                 |
 | ✨DNS           | dids         | mapping(address => string)                   | DID とコントラクトウォレットのアドレスを格納する Map (アドレスから DID を求めるための map)                        |
 | ✨DNS           | addrs        | mapping(string => address)                   | DID とコントラクトウォレットのアドレスを格納する Map (DID からコントラクトウォレットのアドレスを求めるための map) |
-| ✨DNS           | vcs          | mapping(string => [VcInfo])                  | コントラクトウォレットと VC までの CID 情報 を格納する Map                                                        |
+| ✨DNS           | vcs          | mapping(string => [VcInfo])                  | コントラクトウォレットと VC までの CID 情報 を格納する Map          |
+| ✨DNS           | svgPartOne        | string   | NFTのメタデータ(画像)用のSvgデータ1        |
+| ✨DNS           | svgPartTwo        | string   |  NFTのメタデータ(画像)用のSvgデータ2         |
+| ✨DNS           | owner  | address                | DNSコントラクトのownerアドレス。          |
+| ✨DNS           | domains        | mapping(string => string)        | DIDとnameを紐づけるMap         |
+| ✨DNS           | names       |mapping(unit => string)   | トークンIDとnameを紐づけるMap         |
 | MultiSigWallet  | Transaction  | struct                                       | トランザクションデータ用の構造体                                                                                  |
 | MultiSigWallet  | walletName   | string                                       | マルチシグウォレットの名前                                                                                        |
 | MultiSigWallet  | owners       | [address]                                    | Owner のアドレスを格納する配列                                                                                    |
@@ -79,12 +85,16 @@
 | MyToken         | \_afterTokenTransfer  | トークン移転用の関数                                           |
 | MyToken         | \_mint                | 発行用の関数                                                   |
 | MyToken         | \_burn                | 償却用の関数                                                   |
+| ✨MyToken         | getScore            | 指定したウォレットアドレスに紐づくスコアを取得するための変数    |
+| ✨MyToken         | updateScore           | 指定したウォレットアドレスに紐づくスコアを更新するための変数    |
 | WalletFactoryV4 | walletsCount          | MultiSigWallet のインスタンス数を取得する関数                  |
 | WalletFactoryV4 | createWallet          | MultiSigWallet のインスタンス生成関数                          |
 | WalletFactoryV4 | getWallets            | 作成済みウォレットの情報を取得するメソッド                     |
-| ✨DNS           | register              | DID とコントラクトウォレットのアドレスを紐づけるためのメソッド |
+| ✨DNS           | register              | DID とコントラクトウォレットのアドレス及びDIDとnameを紐づけるためのメソッド |
 | ✨DNS           | getVcs                | DID に紐づく VC 情報一覧を取得するためのメソッド               |
 | ✨DNS           | updateVc              | DID に紐づく VC 情報を新たに登録するためのメソッド             |
+| ✨DNS           | isOwner | Ownerかどうかチェックするためのメソッド             |
+| ✨DNS           | valid| nameが3文字以上10文字以下であることをチェックするためのメソッド            |
 | MultiSigWallet  | receive()             | 入金用のメソッド                                               |
 | MultiSigWallet  | submit                | トランザクションデータを作成するメソッド                       |
 | MultiSigWallet  | approve               | 指定した ID のトランザクションを承認するメソッド               |
@@ -103,7 +113,7 @@
 | ------------ | ---------------------- | -------------------------------------------- |
 | POST         | /api/mint              | Token を発行する API                         |
 | POST         | /api/burn              | Token を償却する API                         |
-| GET          | /api/balance/          | Token の残高を取得する API                   |
+| GET          | /api/balance          | Token の残高を取得する API                   |
 | POST         | /api/send              | Token を送金する API                         |
 | POST         | /api/create            | DID を作成する API                           |
 | GET          | /api/resolve           | DID ドキュメントを検索する API               |
@@ -115,4 +125,5 @@
 | POST         | /api/wallet/execute    | トランザクションを実行するための API         |
 | POST         | /create-payment-intent | stripe の Payment element を使うための API   |
 | POST         | /api/registerIpfs      | VC の CID 情報を IPFS に登録する API         |
-|              |                        |                                              |
+| ✨ POST   |  /api/getSoulData   |  DIDに紐づくデータ name ウォレットアドレス、NFT、VC、スコアの情報を取得するためのAPI |
+| ✨ POST   |  /api/updateScore   |  スコアを更新するためのAPI |
