@@ -16,6 +16,7 @@
     "deploy:fuji": "yarn workspace backend deploy:fuji",
     "deploy:sepolia": "yarn workspace backend deploy:sepolia",
     "start:frontend": "yarn workspace frontend start",
+    "build:frontend": "yarn workspace frontend build",
     "test:frontend": "yarn workspace frontend test",
     "start:intro-app": "yarn workspace intro-app start",
     "build:intro-app": "yarn workspace intro-app build",
