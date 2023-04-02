@@ -1,6 +1,6 @@
 ## Intro
 
-There is a wallet that allow the exchange of monetary values without the need for private key management.
+This is a wallet that allows the exchange of monetary values without the need for private key management.
 
 But this is not just a wallet for transactional functions.
 
@@ -14,9 +14,7 @@ As the number of transactions on the blockchain increases, Social Identity token
 
 The more connections you have with others, the more your score will increase, which will be converted into a score in the blockchain domain.
 
-It is a wallet where activity itself is structured as a portfolio.
-
-The problem it solves and the value we want to provide with this app
+It is a wallet where the activity itself is structured as a portfolio.
 
 The application frees the user from complicated private key management and provides a portfolio wallet that manages identity information!
 
@@ -26,7 +24,7 @@ The NFTs and Verifiable Credentials issued as certificates through casual exchan
 
 ## Challenges
 
-1. We challenge you to implement a DID version of ENS.
+1. We challenge you to implementing a DID version of ENS.
 
 2. We challenge to implement an algorithm for scoring with Social Identity tokens.
 
@@ -40,7 +38,7 @@ The NFTs and Verifiable Credentials issued as certificates through casual exchan
 
 4. DID
 
-5. Verfiable Credentials
+5. Verifiable Credentials
 
 6. Express
 
