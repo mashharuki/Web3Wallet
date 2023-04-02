@@ -41,3 +41,5 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
       - name: Frontend build
         run: yarn build:frontend
+        env:
+          CI: false
