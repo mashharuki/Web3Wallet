@@ -91,6 +91,8 @@ Web3 Wallet
 | 5   | AWS Cloud Watch      |
 | 6   | AWS Elastic IP       |
 | 7   | AWS NAT ゲートウェイ |
+| 8   | TheGraph             |
+| 9   | ChainLink            |
 
 ## 使用した Blockchain
 
