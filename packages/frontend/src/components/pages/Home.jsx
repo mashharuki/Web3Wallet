@@ -9,11 +9,11 @@ import superAgent from 'superagent';
 import ActionButton2 from '../common/ActionButton2';
 import LoadingIndicator from '../common/LoadingIndicator';
 import SendDialog from '../common/SendDialog';
-import './../../assets/css/App.css';
 import { useMyContext } from './../../Contexts';
+import './../../assets/css/App.css';
 import {
-    baseURL,
-    WIDTH_THRESHOLD
+    WIDTH_THRESHOLD,
+    baseURL
 } from './../common/Constant';
 import GroupButtons from './../common/GroupButtons';
 import MainContainer from './../common/MainContainer';
@@ -48,16 +48,18 @@ const Home = (props) => {
         isOpenQRCamera, 
         setIsOpenQRCamera,
         setQrResult,
-        clickOpenQrReader
+        clickOpenQrReader,
+        successFlg,
+        failFlg,
+        showToast,
+        isLoading,
+        setIsLoading,
+        popUp
     } = useMyContext();
 
     const [balance, setBalance] = useState(0);
     const [did, setDid] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
     const [isRegistered, setIsRegistered] = useState(false);
-    const [successFlg, setSuccessFlg] = useState(false);
-    const [failFlg, setFailFlg] = useState(false);
-    const [showToast, setShowToast] = useState(false);
     const [to, setTo] = useState(null);
     const [amount, setAmount] = useState(0);
     const [open, setOpen] = useState(false);
@@ -142,33 +144,6 @@ const Home = (props) => {
                 // popUpメソッドの呼び出し
                 popUp(true, "successfull!!");
             });
-    };
-
-    /**
-     * ポップアップ時の処理を担当するメソッド
-     * @param flg true：成功 false：失敗
-     */
-     const popUp = (flg) => {
-        // 成功時と失敗時で処理を分岐する。
-        if(flg === true) {
-            // ステート変数を更新する。
-            setSuccessFlg(true);
-            setShowToast(true);       
-            // 5秒後に非表示にする。
-            setTimeout(() => {
-                setSuccessFlg(false);
-                setShowToast(false);             
-            }, 5000);
-        } else {
-            // ステート変数を更新する。
-            setFailFlg(true);
-            setShowToast(true);     
-            // 5秒後に非表示にする。
-            setTimeout(() => {
-                setFailFlg(false);
-                setShowToast(false);
-            }, 5000);
-        }
     };
 
     /**

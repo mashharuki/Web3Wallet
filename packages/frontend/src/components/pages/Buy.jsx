@@ -7,8 +7,8 @@ import superAgent from 'superagent';
 import ActionButton2 from '../common/ActionButton2';
 import LoadingIndicator from '../common/LoadingIndicator';
 import PaymentDialog from '../common/PaymentDialog';
-import './../../assets/css/App.css';
 import { useMyContext } from './../../Contexts';
+import './../../assets/css/App.css';
 import { baseURL } from "./../common/Constant";
 import MainContainer from './../common/MainContainer';
 
@@ -28,13 +28,15 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 const Buy = (props) => {
       // create contract
       const {
-            currentAccount
+            currentAccount,
+            successFlg,
+            failFlg,
+            showToast,
+            isLoading,
+            setIsLoading,
+            popUp
       } = useMyContext();
 
-      const [isLoading, setIsLoading] = useState(false);
-      const [successFlg, setSuccessFlg] = useState(false);
-      const [failFlg, setFailFlg] = useState(false);
-      const [showToast, setShowToast] = useState(false);
       const [amount, setAmount] = useState(0);
       const [open, setOpen] = useState(false);
 
@@ -63,33 +65,6 @@ const Buy = (props) => {
                         popUp(true, "successfull!!");
                         setIsLoading(false);   
                   });
-      };
-
-      /**
-       * ポップアップ時の処理を担当するメソッド
-       * @param flg true：成功 false：失敗
-       */
-      const popUp = (flg) => {
-            // 成功時と失敗時で処理を分岐する。
-            if(flg === true) {
-                  // ステート変数を更新する。
-                  setSuccessFlg(true);
-                  setShowToast(true);       
-                  // 5秒後に非表示にする。
-                  setTimeout(() => {
-                        setSuccessFlg(false);
-                        setShowToast(false);             
-                  }, 5000);
-            } else {
-                  // ステート変数を更新する。
-                  setFailFlg(true);
-                  setShowToast(true);     
-                  // 5秒後に非表示にする。
-                  setTimeout(() => {
-                        setFailFlg(false);
-                        setShowToast(false);
-                  }, 5000);
-            }
       };
 
       /**
@@ -156,18 +131,18 @@ const Buy = (props) => {
                               </>
                         )}
                   </StyledPaper>
-                {successFlg && (
+                  {successFlg && (
                         /* 成功時のポップアップ */
                         <div id="toast" className={showToast ? "zero-show" : ""}>
                               <div id="secdesc">Trasaction Successfull!!</div>
                         </div>
-                )}
-                {failFlg && (
+                  )}
+                  {failFlg && (
                         /* 失敗時のポップアップ */
                         <div id="toast" className={showToast ? "zero-show" : ""}>
                               <div id="desc">Trasaction failfull..</div>
                         </div>
-                )}
+                  )}
             </MainContainer>
       );
 };

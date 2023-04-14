@@ -35,15 +35,18 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 const Upload = (props) => {
       // create contract
       const {
-            currentAccount
+            currentAccount,
+            successFlg,
+            failFlg,
+            showToast,
+            isLoading,
+            setIsLoading,
+            popUp
       } = useMyContext();
 
       const [file, setFile] = useState({});
       const [fileName, setFileName] = useState('blockcert json file');
       const [pendingFlg, setPendingFlg] = useState(false);
-      const [successFlg, setSuccessFlg] = useState(false);
-      const [failFlg, setFailFlg] = useState(false);
-      const [showToast, setShowToast] = useState(false);
 
       /**
        * ファイルをIPFSにアップロードしてCIDをコントラクトと紐付けるメソッド
@@ -121,33 +124,7 @@ const Upload = (props) => {
             setFileName(newFile.name)
       };
 
-      /**
-       * ポップアップ時の処理を担当するメソッド
-       * @param flg true：成功 false：失敗
-       */
-      const popUp = (flg) => {
-            // 成功時と失敗時で処理を分岐する。
-            if(flg === true) {
-                  // ステート変数を更新する。
-                  setSuccessFlg(true);
-                  setShowToast(true);       
-                  // 5秒後に非表示にする。
-                  setTimeout(() => {
-                        setSuccessFlg(false);
-                        setShowToast(false);             
-                  }, 5000);
-            } else {
-                  // ステート変数を更新する。
-                  setFailFlg(true);
-                  setShowToast(true);     
-                  // 5秒後に非表示にする。
-                  setTimeout(() => {
-                        setFailFlg(false);
-                        setShowToast(false);
-                  }, 5000);
-            }
-      };
-
+      
       return (
             <MainContainer>
                   <StyledPaper 

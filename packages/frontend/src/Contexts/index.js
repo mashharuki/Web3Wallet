@@ -22,6 +22,10 @@ export const ContextProvider = ({ children }) => {
   const [width, setWidth] = useState(0);
   const [isOpenQRCamera, setIsOpenQRCamera] = useState(false);
   const [qrResult, setQrResult] = useState({});
+  const [successFlg, setSuccessFlg] = useState(false);
+  const [failFlg, setFailFlg] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   /**
    * update screent width
@@ -38,12 +42,37 @@ export const ContextProvider = ({ children }) => {
     setIsOpenQRCamera(true);
   };
 
+  /**
+   * popUp
+   * @param flg true: success false：fail
+   */
+  const popUp = (flg) => {
+    if(flg === true) {
+        // ステート変数を更新する。
+        setSuccessFlg(true);
+        setShowToast(true);       
+        // 5秒後に非表示にする。
+        setTimeout(() => {
+            setSuccessFlg(false);
+            setShowToast(false);             
+        }, 5000);
+    } else {
+        // ステート変数を更新する。
+        setFailFlg(true);
+        setShowToast(true);     
+        // 5秒後に非表示にする。
+        setTimeout(() => {
+            setFailFlg(false);
+            setShowToast(false);
+        }, 5000);
+    }
+};
+
   return (
     <MyContext.Provider 
       value={{
         currentAccount,
         setCurrentAccount,
-        updateWidth,
         width,
         setWidth,
         fullDid, 
@@ -52,7 +81,17 @@ export const ContextProvider = ({ children }) => {
         setIsOpenQRCamera,
         qrResult, 
         setQrResult,
-        clickOpenQrReader
+        successFlg,
+        setSuccessFlg,
+        failFlg,
+        setFailFlg,
+        showToast,
+        setShowToast,
+        isLoading,
+        setIsLoading,
+        updateWidth,
+        clickOpenQrReader,
+        popUp
       }}
     >
       {children}

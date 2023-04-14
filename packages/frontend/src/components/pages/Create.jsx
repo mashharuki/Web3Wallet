@@ -8,8 +8,8 @@ import React, { useEffect, useState } from "react";
 import superAgent from 'superagent';
 import ActionButton from '../common/ActionButton';
 import LoadingIndicator from '../common/LoadingIndicator';
-import './../../assets/css/App.css';
 import { useMyContext } from './../../Contexts';
+import './../../assets/css/App.css';
 import {
     baseURL
 } from './../common/Constant';
@@ -31,7 +31,13 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 const Create = (props) => {
     // create contract
     const {
-        currentAccount
+        currentAccount,
+        successFlg,
+        failFlg,
+        showToast,
+        isLoading,
+        setIsLoading,
+        popUp
     } = useMyContext();
 
 
@@ -45,14 +51,6 @@ const Create = (props) => {
     const [owner, setOwner] = useState(null);
     // ウォレットの閾値を格納するステート変数
     const [required, setRequired] = useState(0);
-    // トランザクションが正常に処理された場合のフラグ
-    const [successFlg, setSuccessFlg] = useState(false);
-    // トランザクションが異常終了した場合のフラグ
-    const [failFlg, setFailFlg] = useState(false);
-    // ポップアップの表示を管理するフラグ
-    const [showToast, setShowToast] = useState(false);
-    // ローディングを表示するためのフラグ
-    const [isLoading, setIsLoading] = useState(false);
 
     /**
      * コンポーネントが描画されたタイミングで実行する初期化関数
@@ -120,33 +118,6 @@ const Create = (props) => {
         // ステート変数を更新する。
         setOwner('');
         alert("アドレス追加完了！");
-    };
-
-    /**
-     * ポップアップ時の処理を担当するメソッド
-     * @param flg true：成功 false：失敗
-     */
-    const popUp = (flg) => {
-        // 成功時と失敗時で処理を分岐する。
-        if(flg === true) {
-            // ステート変数を更新する。
-            setSuccessFlg(true);
-            setShowToast(true);       
-            // 5秒後に非表示にする。
-            setTimeout(() => {
-                setSuccessFlg(false);
-                setShowToast(false);             
-            }, 5000);
-        } else {
-            // ステート変数を更新する。
-            setFailFlg(true);
-            setShowToast(true);     
-            // 5秒後に非表示にする。
-            setTimeout(() => {
-                setFailFlg(false);
-                setShowToast(false);
-            }, 5000);
-        }
     };
 
     // 副作用フック

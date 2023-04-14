@@ -1,7 +1,6 @@
 // mui関連のコンポーネントのインポート
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import { styled } from "@mui/material/styles";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,13 +8,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { styled } from "@mui/material/styles";
 import React, { useEffect, useState } from "react";
 import superAgent from 'superagent';
 import Web3 from "web3";
 import WalletDialog from '../../common/Dialog';
 import LoadingIndicator from '../../common/LoadingIndicator';
-import './../../../assets/css/App.css';
 import { useMyContext } from './../../../Contexts';
+import './../../../assets/css/App.css';
 import {
     baseURL
 } from './../../common/Constant';
@@ -52,7 +52,13 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 const Wallets = (props) => {
     // create contract
     const {
-        currentAccount
+        currentAccount,
+        successFlg,
+        failFlg,
+        showToast,
+        isLoading,
+        setIsLoading,
+        popUp
     } = useMyContext();
     
     // アカウント用のステート変数
@@ -65,14 +71,6 @@ const Wallets = (props) => {
     const [page, setPage] = useState(0);
     // 1ページに表示する上限数
     const [rowsPerPage, setRowsPerPage] = useState(10);
-    // ローディングを表示するためのフラグ
-    const [isLoading, setIsLoading] = useState(false);
-    // トランザクションが正常に処理された場合のフラグ
-    const [successFlg, setSuccessFlg] = useState(false);
-    // トランザクションが異常終了した場合のフラグ
-    const [failFlg, setFailFlg] = useState(false);
-    // ポップアップの表示を管理するフラグ
-    const [showToast, setShowToast] = useState(false);
     // Dialogの表示を切り替えるフラグ
     const [open, setOpen] = useState(false);
     // deposit address
@@ -187,33 +185,7 @@ const Wallets = (props) => {
         setPage(0);
     };
 
-    /**
-     * ポップアップ時の処理を担当するメソッド
-     * @param flg true：成功 false：失敗
-     */
-    const popUp = (flg) => {
-        // 成功時と失敗時で処理を分岐する。
-        if(flg === true) {
-            // ステート変数を更新する。
-            setSuccessFlg(true);
-            setShowToast(true);       
-            // 5秒後に非表示にする。
-            setTimeout(() => {
-                setSuccessFlg(false);
-                setShowToast(false);             
-            }, 5000);
-        } else {
-            // ステート変数を更新する。
-            setFailFlg(true);
-            setShowToast(true);     
-            // 5秒後に非表示にする。
-            setTimeout(() => {
-                setFailFlg(false);
-                setShowToast(false);
-            }, 5000);
-        }
-    };
-
+    
     // 副作用フック
     useEffect(() => {
         setIsLoading(true);
